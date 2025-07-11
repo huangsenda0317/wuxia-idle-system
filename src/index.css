@@ -1,0 +1,30 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  text-size-adjust: 100%;
+  user-select: none;
+  font-family: '三极行楷简体', sans-serif !important;
+  cursor:
+    url('~@/assets/images/default.png') 1 1,
+    auto;
+}
+
+div,
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+input,
+textarea,
+button,
+select,
+option {
+  font-family: '三极行楷简体', sans-serif !important;
+}

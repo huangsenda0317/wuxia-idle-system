@@ -1,0 +1,14 @@
+@font-face {
+  font-family: '衡山毛笔行书';
+  src: url('./衡山毛笔行书.ttf');
+}
+
+@font-face {
+  font-family: '三极泼墨体';
+  src: url('./SanJiPoMoTi-2.ttf');
+}
+
+@font-face {
+  font-family: '三极行楷简体';
+  src: url('./三极行楷简体-粗.ttf');
+}

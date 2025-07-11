@@ -1,0 +1,53 @@
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.messageContainer {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  z-index: 1000;
+  display: flex;
+  transform: translateX(-50%);
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.messageContent {
+  display: flex;
+  padding: 8px 16px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-color);
+  color: #fff;
+  animation: slideIn 0.3s ease-out;
+  border-radius: 4px;
+  align-items: center;
+  gap: 8px;
+
+  .messageContentImg {
+    height: 20px;
+  }
+}
