@@ -9,9 +9,19 @@ body,
   text-size-adjust: 100%;
   user-select: none;
   font-family: '三极行楷简体', sans-serif !important;
+  background-color: #1a1a1a;
   cursor:
     url('~@/assets/images/default.png') 1 1,
     auto;
+}
+
+[style*='cursor: pointer'],
+button,
+.cursorPointer,
+a {
+  cursor:
+    url('~@/assets/images/pointer.png') 1 1,
+    pointer !important;
 }
 
 div,
@@ -23,7 +33,6 @@ h3,
 h4,
 input,
 textarea,
-button,
 select,
 option {
   font-family: '三极行楷简体', sans-serif !important;

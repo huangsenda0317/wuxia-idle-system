@@ -3,7 +3,7 @@ import { formatNumber } from './formatNumber';
 import styles from './index.module.less';
 import { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { QiaoFuList, toastColor } from '@/constants';
+// import { QiaoFuList, toastColor } from '@/constants';
 import store from '@/store';
 
 interface MessageProps {
@@ -64,35 +64,35 @@ export const showMessage = (
     messageContainer = createMessageContainer();
   }
 
-  const itemInfo = QiaoFuList.find((i: ItemInfo) => i.name === key);
-  const borderColor = toastColor[store.page as keyof typeof toastColor];
+  // const itemInfo = QiaoFuList.find((i: ItemInfo) => i.name === key);
+  // const borderColor = toastColor[store.page as keyof typeof toastColor];
 
-  const messageItem: MessageItem = {
-    id: String(Date.now()),
-    key: key,
-    content: (
-      <div
-        className={styles.messageContent}
-        style={
-          {
-            '--border-color': borderColor,
-            '--bg-color': `${borderColor}80`, // 80 是十六进制的0.5
-          } as React.CSSProperties
-        }
-      >
-        <img className={styles.messageContentImg} src={itemInfo?.itemImg} alt={itemInfo?.name} />
-        <span className={styles.messageContentAdd}>
-          +{formatNumber(add)} {itemInfo?.name}
-        </span>
-        <span className={styles.messageContentSum}>({formatNumber(sum)})</span>
-      </div>
-    ),
-    duration,
-    onClose: () => {
-      messages.delete(key);
-      render();
-    },
-  };
+  // const messageItem: MessageItem = {
+  //   id: String(Date.now()),
+  //   key: key,
+  //   content: (
+  //     <div
+  //       className={styles.messageContent}
+  //       style={
+  //         {
+  //           '--border-color': borderColor,
+  //           '--bg-color': `${borderColor}80`, // 80 是十六进制的0.5
+  //         } as React.CSSProperties
+  //       }
+  //     >
+  //       <img className={styles.messageContentImg} src={itemInfo?.itemImg} alt={itemInfo?.name} />
+  //       <span className={styles.messageContentAdd}>
+  //         +{formatNumber(add)} {itemInfo?.name}
+  //       </span>
+  //       <span className={styles.messageContentSum}>({formatNumber(sum)})</span>
+  //     </div>
+  //   ),
+  //   duration,
+  //   onClose: () => {
+  //     messages.delete(key);
+  //     render();
+  //   },
+  // };
 
   // 如果已存在相同key的消息，先移除它
   if (messages.has(key)) {
@@ -100,7 +100,7 @@ export const showMessage = (
   }
 
   // 添加新消息
-  messages.set(key, messageItem);
+  // messages.set(key, messageItem);
   render();
 };
 
