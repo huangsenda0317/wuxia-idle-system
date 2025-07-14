@@ -18,6 +18,8 @@ body,
 [style*='cursor: pointer'],
 button,
 .cursorPointer,
+.ant-tabs-tab,
+.ant-tabs-dropdown-menu-item,
 a {
   cursor:
     url('~@/assets/images/pointer.png') 1 1,

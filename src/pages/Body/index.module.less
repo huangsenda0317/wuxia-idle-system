@@ -1,7 +1,18 @@
 @import url('@/assets/less/variables');
 
 .body {
-  width: 100%;
-  background-color: @primaryColor;
+  display: flex;
   color: #e0e0e0;
+  background-color: @primaryColor;
+  flex: 1;
+
+  .left {
+    flex: 1;
+    padding: 16px;
+  }
+
+  .right {
+    width: 300px;
+    border-left: 2px solid rgb(255 255 255 / 10%);
+  }
 }

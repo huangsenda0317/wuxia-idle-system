@@ -1,18 +1,20 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import styles from './index.module.less';
 import { marketMenu, bagMenu, factionMenu, skillMenu, lifeMenu } from '@/constants';
 import classNames from 'classnames';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Tabs } from 'antd';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 type PageProps = {
   firstMenuActive: string;
+  secondMenuActive: string;
+  setSecondMenuActive: (key: string) => void;
 };
 
-const Menu: React.FC<PageProps> = ({ firstMenuActive }) => {
-  const [secondMenuActive, setSecondMenuActive] = useState('');
+const Menu: React.FC<PageProps> = ({ firstMenuActive, secondMenuActive, setSecondMenuActive }) => {
   const secondMenu = useMemo(() => {
     switch (firstMenuActive) {
       case '集市':
@@ -28,22 +30,26 @@ const Menu: React.FC<PageProps> = ({ firstMenuActive }) => {
     }
   }, [firstMenuActive]);
 
+  const items = useMemo(() => {
+    return secondMenu?.map((item) => ({
+      key: item.id,
+      label: item.name,
+    }));
+  }, [secondMenu]);
+
+  useEffect(() => {
+    if (secondMenu && secondMenu.length > 0) {
+      setSecondMenuActive(secondMenu[0].id);
+    }
+  }, [firstMenuActive, secondMenu, setSecondMenuActive]);
+
+  const handleChange = (key: string) => {
+    setSecondMenuActive(key);
+  };
+
   return (
     <div className={styles.menu}>
-      <Swiper freeMode={true} slidesPerView="auto">
-        {secondMenu &&
-          secondMenu.map((item) => (
-            <SwiperSlide
-              key={item.id}
-              className={classNames(styles.menuItem, 'cursorPointer', {
-                [styles.active]: secondMenuActive === item.id,
-              })}
-              onClick={() => setSecondMenuActive(item.id)}
-            >
-              <span>{item.name}</span>
-            </SwiperSlide>
-          ))}
-      </Swiper>
+      <Tabs items={items} activeKey={secondMenuActive} onChange={handleChange} />
     </div>
   );
 };

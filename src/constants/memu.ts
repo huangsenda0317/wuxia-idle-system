@@ -30,27 +30,27 @@ export const mainMenu = [
 // 集市菜单
 export const marketMenu = [
   {
-    id: '装备',
+    id: '集市装备',
     name: '装备',
   },
   {
-    id: '材料',
+    id: '集市材料',
     name: '材料',
   },
   {
-    id: '丹药',
+    id: '集市丹药',
     name: '丹药',
   },
   {
-    id: '功法',
+    id: '集市功法',
     name: '功法',
   },
   {
-    id: '技能升级',
+    id: '集市技能升级',
     name: '技能升级',
   },
   {
-    id: '其他',
+    id: '集市其他',
     name: '其他',
   },
 ];
@@ -58,35 +58,35 @@ export const marketMenu = [
 // 行囊菜单
 export const bagMenu = [
   {
-    id: '全部',
+    id: '行囊全部',
     name: '全部',
   },
   {
-    id: '食物',
+    id: '行囊食物',
     name: '食物',
   },
   {
-    id: '药物',
+    id: '行囊药物',
     name: '药物',
   },
   {
-    id: '资源',
+    id: '行囊资源',
     name: '资源',
   },
   {
-    id: '装备',
+    id: '行囊装备',
     name: '装备',
   },
   {
-    id: '武学',
+    id: '行囊武学',
     name: '武学',
   },
   {
-    id: '心法',
+    id: '行囊心法',
     name: '心法',
   },
   {
-    id: '突破材料',
+    id: '行囊突破材料',
     name: '突破材料',
   },
 ];

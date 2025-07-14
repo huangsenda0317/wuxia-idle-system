@@ -2,20 +2,57 @@
 
 .menu {
   display: flex;
+  width: calc(100% - 32px);
   height: 40px;
-  padding: 0 32px;
+  padding-left: 32px;
   background: linear-gradient(to right, #2a2a2a, #1a1a1a);
   color: #e0e0e0;
   border-bottom: 1px solid rgb(255 255 255 / 10%);
   align-items: center;
-  overflow: auto hidden;
+  overflow: hidden;
 
-  .menuItem {
-    display: flex;
-    height: 100%;
-    min-width: 64px;
-    padding: 0 16px;
-    margin-right: 24px;
-    line-height: 40px;
+  :global {
+    .ant-tabs {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .ant-tabs-nav {
+      margin-bottom: 0;
+    }
+
+    .ant-tabs-tab {
+      color: #e0e0e0;
+      transition: all 0.2s ease;
+      font-size: 16px;
+
+      &:hover {
+        color: #ffd700 !important;
+      }
+
+      &.ant-tabs-tab-active {
+        .ant-tabs-tab-btn {
+          color: #ffd700 !important;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .ant-tabs-nav-operations {
+      .ant-tabs-nav-more {
+        color: #e0e0e0;
+      }
+    }
+
+    .ant-tabs-nav-wrap {
+      &::before {
+        box-shadow: inset 10px 0 8px -8px rgb(255 215 0 / 100%) !important;
+      }
+
+      &::after {
+        box-shadow: inset 10px 0 8px -8px rgb(255 215 0 / 100%) !important;
+        right: -25px !important;
+      }
+    }
   }
 }
